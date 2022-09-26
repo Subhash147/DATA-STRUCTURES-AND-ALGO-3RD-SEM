@@ -1,0 +1,63 @@
+
+//SUBHASH KUMAR
+//SID;21108029
+//METALLURGICAL AND METERIALS ENG
+
+*[Question.1] While traversing a single-circular linked list, which condition establishes that the traversing element/variable has reached the first element? */
+//[Ans.1]
+//example of linked list and  create a circular linked list
+#include <iostream>
+using namespace std;
+//Creating Node class
+class Node{
+    //Creating class objects
+    public:
+    int data;
+    Node*next;
+    //Calling Node constructor
+    Node(int data){
+        this->data=data;
+        next=NULL;
+    }
+};
+//Function to insert a node at end on linked list
+void append(Node*&head,int data){
+    Node*temp=head;
+    Node*new_node=new Node(data);
+    if(temp==NULL){head=new_node;new_node->next=head;return;}
+    while(temp->next!=head){temp=temp->next;}   //This condition establishes that the traversing element(temp) has reached the first element
+    temp->next=new_node;
+    new_node->next=head;
+}
+//Func to print elements of linked list from head to the last node.
+void pfun(Node*&head){
+    Node*temp=head;
+    do{cout<<temp->data<<"->";temp=temp->next;}
+    while(temp!=head);
+}
+
+int main(){
+    Node*head=NULL;
+    append(head,1);
+    append(head,2);
+    append(head,3);
+    pfun(head);
+}
+/*
+ from 
+above example of circular linked list.
+Line 24 i.e. while(temp->next!=head){temp=temp->next;} establishes that the traversing element/variable has reached the first element.
+AS We know that in circular linked list last node of linked list points to head of that linked list,	hence we can check if any node points to head of linked list then that node is the end of circular linked list.
+*/
+/*[Question.2]ans:
+1.undo functioning in photoshop or word.
+2.used in round robin scheduling.
+3.implementation of advanececd data strucutues.
+4.Used in audio video streaming
+5.used in games
+6/.used in computer networking
+7.used to manage the computing resources.
+
+//SUBHASH KUMAR
+// sid:21108029
+//metallurgical and meterials eng
